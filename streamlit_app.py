@@ -43,6 +43,20 @@ st.markdown("""
             transform: scale(1.05);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+        .book-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .placeholder-image {
+            background-color: #f0f0f0;
+            width: 120px;
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px dashed #ccc;
+            margin: auto;
+        }
         footer {
             text-align: center;
             font-size: 12px;
@@ -59,33 +73,39 @@ Welcome to the **Book Recommendation System**! Enter a book title, choose the nu
 and we'll suggest similar books. You can even see the book covers (if available).
 """, unsafe_allow_html=True)
 
-# Input section
+# Input section with autocomplete
 st.sidebar.header("User Input")
 book_input = st.sidebar.text_input("Enter a book name:")
 num_recommendations = st.sidebar.slider("Number of recommendations", 2, 20, 5)
+
+# Auto-completion for book input
+if book_input:
+    book_options = book_name[book_name.str.contains(book_input, case=False, na=False)].tolist()
+    if book_options:
+        book_input = st.sidebar.selectbox("Select a book:", options=book_options)
+    else:
+        book_input = st.sidebar.text_input("Enter a book name:")
 
 # Main section for displaying recommendations
 if st.sidebar.button('Recommend'):
     st.subheader(f"Recommendations for: **{book_input}**")
     
-    if book_input in book_name.values:
+    if book_input in book_pivot.index:
         recommendations = recommend_book(book_input, n_neighbors=num_recommendations)
-        
-        st.write(f"We found **{len(recommendations)}** recommendations for you:")
-        
+                
         # Create a container for the book recommendations
         book_container = st.container()
         with book_container:
             cols = st.columns(3)  # Adjust the number of columns as needed
             for i, rec in enumerate(recommendations):
                 with cols[i % 3]:  # Cycle through columns
-                    st.markdown(f"<div class='book'><strong>{rec}</strong>", unsafe_allow_html=True)
-                    # Display book image if available
+                    st.markdown(f"<div class='book'><div class='book-title'>{rec}</div>", unsafe_allow_html=True)
+                    # Display book image if available, or a placeholder
                     try:
                         image_url = final_ratings[final_ratings['title'] == rec]['image-url'].iloc[0]
                         st.image(image_url, width=120)
                     except:
-                        st.write("*(Image not available)*")
+                        st.markdown("<div class='placeholder-image'>No Image</div>", unsafe_allow_html=True)
                     st.markdown("</div>", unsafe_allow_html=True)
     else:
         st.error("Book not found. Please check the name or try another title.")
