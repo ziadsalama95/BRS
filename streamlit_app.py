@@ -42,7 +42,7 @@ st.markdown("""
 # Title and description
 st.title('📚 Book Recommendation System')
 st.markdown("""
-Welcome to the **Book Recommendation System** using **collaborative filtering**!
+We suggest similar books using **collaborative filtering**.
 """, unsafe_allow_html=True)
 
 
