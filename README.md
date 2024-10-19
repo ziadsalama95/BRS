@@ -44,7 +44,7 @@ This system utilizes a pre-trained model and a set of book data to recommend boo
 
 3. Run the Streamlit app:
     ```bash
-    streamlit run app.py
+    streamlit run streamlit_app.py
     ```
 
 4. Visit `http://localhost:8501` in your browser.
@@ -66,9 +66,5 @@ This system utilizes a pre-trained model and a set of book data to recommend boo
 ## Deployed App
 
 The app is deployed and accessible at: [https://depi-brs.streamlit.app/](https://depi-brs.streamlit.app).
-
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
 Feel free to explore and contribute!
