@@ -42,8 +42,12 @@ st.markdown("""
 # Title and description
 st.title('📚 Book Recommendation System')
 st.markdown("""
-Welcome to the **Book Recommendation System**! Enter a book title, and we'll suggest similar books. You can even see the book covers (if available).
+Welcome to the **Book Recommendation System**! 
+- Enter a book title, and we'll suggest similar books. You can even see the book covers (if available).
+- If you're using a mobile device, tap the arrow icon in the top-left corner to open the sidebar. Once the sidebar is open, start typing the book name in the search bar.
+- Adjust the number of recommendations using the slider to see more or fewer book suggestions.
 """, unsafe_allow_html=True)
+
 
 # Input section
 st.sidebar.header("User Input")
@@ -78,8 +82,8 @@ else:
     st.sidebar.info("Enter a book title to see suggestions.")
 
 # Footer
-st.markdown("""
-<footer>
-    <p>Powered by <a href="https://www.linkedin.com/in/ziadsalama/" target="_blank">Ziad Salama</a> | &copy; 2024</p>
-</footer>
-""", unsafe_allow_html=True)
+# st.markdown("""
+# <footer>
+#     <p>Powered by <a href="https://www.linkedin.com/in/ziadsalama/" target="_blank">Ziad Salama</a> | &copy; 2024</p>
+# </footer>
+# """, unsafe_allow_html=True)
