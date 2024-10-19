@@ -42,10 +42,7 @@ st.markdown("""
 # Title and description
 st.title('📚 Book Recommendation System')
 st.markdown("""
-Welcome to the **Book Recommendation System**! 
-- Enter a book title, and we'll suggest similar books using **collaborative filtering** based on user preferences. You can even see the book covers (if available).
-- If you're using a mobile device, tap the arrow icon in the top-left corner to open the sidebar. Once the sidebar is open, start typing the book name in the search bar.
-- Adjust the number of recommendations using the slider to see more or fewer book suggestions.
+Welcome to the **Book Recommendation System** using **collaborative filtering**!
 """, unsafe_allow_html=True)
 
 
