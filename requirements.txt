@@ -1,1 +1,4 @@
 streamlit
+pickle5  # pickle may not require a separate package, but for environments that don't support built-in pickle, pickle5 can be used
+numpy
+Pillow  # PIL is part of the Pillow package
