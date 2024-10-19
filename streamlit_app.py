@@ -19,12 +19,45 @@ def recommend_book(book_name, n_neighbors=6):
 # Improved Streamlit UI
 st.set_page_config(page_title="Book Recommendation System", page_icon="📚", layout="centered")
 
+# Custom CSS for styling
+st.markdown("""
+    <style>
+        .font {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .book {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .book:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # Title and description
 st.title('📚 Book Recommendation System')
 st.markdown("""
 Welcome to the **Book Recommendation System**! Enter a book title, choose the number of recommendations you'd like, 
 and we'll suggest similar books. You can even see the book covers (if available).
-""")
+""", unsafe_allow_html=True)
 
 # Input section
 st.sidebar.header("User Input")
@@ -40,20 +73,28 @@ if st.sidebar.button('Recommend'):
         
         st.write(f"We found **{len(recommendations)}** recommendations for you:")
         
-        for rec in recommendations:
-            st.markdown(f"**{rec}**")
-            
-            # Display book image if available
-            try:
-                image_url = final_ratings[final_ratings['title'] == rec]['image-url'].iloc[0]
-                st.image(image_url, width=150, caption=rec)
-            except:
-                st.write("*(Image not available)*")
+        # Create a container for the book recommendations
+        book_container = st.container()
+        with book_container:
+            cols = st.columns(3)  # Adjust the number of columns as needed
+            for i, rec in enumerate(recommendations):
+                with cols[i % 3]:  # Cycle through columns
+                    st.markdown(f"<div class='book'><strong>{rec}</strong>", unsafe_allow_html=True)
+                    # Display book image if available
+                    try:
+                        image_url = final_ratings[final_ratings['title'] == rec]['image-url'].iloc[0]
+                        st.image(image_url, width=120)
+                    except:
+                        st.write("*(Image not available)*")
+                    st.markdown("</div>", unsafe_allow_html=True)
     else:
         st.error("Book not found. Please check the name or try another title.")
 else:
     st.sidebar.info("Enter a book title and hit 'Recommend' to get book suggestions.")
 
 # Footer
-st.markdown("---")
-st.markdown("Developed with ❤️ by [Ziad Salama](https://www.linkedin.com/in/ziadsalama/)")
+st.markdown("""
+<footer>
+    <p>Powered by the Book Recommendation System Team | &copy; 2024</p>
+</footer>
+""", unsafe_allow_html=True)
