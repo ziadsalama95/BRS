@@ -65,6 +65,6 @@ This system utilizes a pre-trained model and a set of book data to recommend boo
 
 ## Deployed App
 
-The app is deployed and accessible at: [https://depi-brs.streamlit.app/](https://depi-brs.streamlit.app).
+The app is deployed and accessible at: [https://depi-brs.streamlit.app](https://depi-brs.streamlit.app).
 
 Feel free to explore and contribute!
