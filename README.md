@@ -53,14 +53,15 @@ This system utilizes a pre-trained model and a set of book data to recommend boo
 
 ```
 .
-├── streamlit_app.py    # Main Streamlit app
+├── streamlit_app.py
+├── recommender.ipynb
 ├── artifacts/
-│   ├── model.pkl       # Trained recommendation model
-│   ├── book_name.pkl   # Pickled list of book names
-│   ├── book_pivot.pkl  # Pickled book pivot table for recommendation
-│   └── final_ratings.pkl  # Dataset containing book titles and images
-├── requirements.txt    # Required dependencies
-└── README.md           # Project documentation
+│   ├── model.pkl
+│   ├── book_name.pkl
+│   ├── book_pivot.pkl
+│   └── final_ratings.pkl
+├── requirements.txt
+└── README.md
 ```
 
 ## Deployed App
