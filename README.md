@@ -73,8 +73,4 @@ The app is deployed and accessible at: [https://depi-brs.streamlit.app/](https:/
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
-## Author
-
-- **Ziad Salama** - [LinkedIn](https://www.linkedin.com/in/ziadsalama/)
-
 Feel free to explore and contribute!
