@@ -5,7 +5,7 @@ This is a **Book Recommendation System** built using machine learning and deploy
 
 ## Project Overview
 
-This system utilizes a pre-trained model and a set of book data to recommend books based on a user's input. The model works by finding the nearest neighbors of the given book in the feature space. The app is deployed and can be accessed [here](https://depi-brs.streamlit.app/).
+This system utilizes a pre-trained model and a set of book data to recommend books based on a user's input. The model works by finding the nearest neighbors of the given book in the feature space. The app is deployed and can be accessed [here](https://depi-brs.streamlit.app).
 
 ## Features
 
@@ -65,7 +65,7 @@ This system utilizes a pre-trained model and a set of book data to recommend boo
 
 ## Deployed App
 
-The app is deployed and accessible at: [https://depi-brs.streamlit.app/](https://depi-brs.streamlit.app/).
+The app is deployed and accessible at: [https://depi-brs.streamlit.app/](https://depi-brs.streamlit.app).
 
 ## License
 
