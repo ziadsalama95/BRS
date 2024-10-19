@@ -60,9 +60,7 @@ This system utilizes a pre-trained model and a set of book data to recommend boo
 │   ├── book_pivot.pkl  # Pickled book pivot table for recommendation
 │   └── final_ratings.pkl  # Dataset containing book titles and images
 ├── requirements.txt    # Required dependencies
-├── README.md           # Project documentation
-└── .streamlit/
-    └── config.toml     # Streamlit configuration
+└── README.md           # Project documentation
 ```
 
 ## Deployed App
