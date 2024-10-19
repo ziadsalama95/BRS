@@ -53,7 +53,7 @@ This system utilizes a pre-trained model and a set of book data to recommend boo
 
 ```
 .
-├── app.py              # Main Streamlit app
+├── streamlit_app.py    # Main Streamlit app
 ├── artifacts/
 │   ├── model.pkl       # Trained recommendation model
 │   ├── book_name.pkl   # Pickled list of book names
